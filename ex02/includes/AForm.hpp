@@ -42,11 +42,6 @@ class AForm
 			public:
 				virtual const char *what() const throw();
 		};
-	protected:
-		void	setName(const std::string &name);
-		void	setSigned(bool sign);
-		void	setNeededSign(int neededSign);
-		void	setNeededExe(int neededExe);
 	private:
 		const std::string _name;
 		bool _signed;

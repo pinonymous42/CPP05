@@ -21,8 +21,8 @@ int	main()
 		bureaucrat.signForm(form3);
 		std::cout << std::endl;
 
-		for (int i = 155; i > 0; i -= 5) // error cace
-		// for (int i = 150; i > 0; i -= 5)
+		// for (int i = 155; i > 0; i -= 5) // error cace
+		for (int i = 150; i > 0; i -= 5)
 		{
 			bureaucrat.setGrade(i);
 			std::cout << MAGENTA << "Form 1 (Shrubbery)" << DEFAULT << std::endl;

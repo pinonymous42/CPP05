@@ -15,13 +15,9 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << BLUE << "PresidentialPardonForm's destructor called" << DEFAULT << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &form)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &form):AForm(form)
 {
 	this->_target = form.getTarget();
-	this->setName(form.getName());
-	this->setSigned(form.getSigned());
-	this->setNeededSign(form.getNeededSign());
-	this->setNeededExe(form.getNeededExe());
 	std::cout << BLUE << "PresidentialPardonForm's copy constructor called" << DEFAULT << std::endl;
 }
 
@@ -30,10 +26,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 	if (this != &form)
 	{
 		this->_target = form.getTarget();
-		this->setName(form.getName());
-		this->setSigned(form.getSigned());
-		this->setNeededSign(form.getNeededSign());
-		this->setNeededExe(form.getNeededExe());
+		AForm::operator=(form);
 	}
 	return (*this);
 }

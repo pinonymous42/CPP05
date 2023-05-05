@@ -90,23 +90,3 @@ std::ostream &operator<<(std::ostream &ostr, const AForm &Aform)
 	ostr << GREEN << "needed Execute: " << Aform.getNeededExe() << DEFAULT << std::endl;
 	return (ostr);
 }
-
-void	AForm::setName(const std::string &name)
-{
-	const_cast<std::string &>(this->_name) = name;
-}
-
-void	AForm::setSigned(bool sign)
-{
-	this->_signed = sign;
-}
-
-void	AForm::setNeededSign(int neededSign)
-{
-	const_cast<int &>(this->_neededSign) = neededSign;
-}
-
-void	AForm::setNeededExe(int neededExe)
-{
-	const_cast<int &>(this->_neededExe) = neededExe;
-}

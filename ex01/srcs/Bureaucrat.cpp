@@ -70,7 +70,7 @@ void	Bureaucrat::decrementGrade()
 
 std::ostream &operator<<(std::ostream &ostr, const Bureaucrat &bureaucrat)
 {
-	ostr << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+	ostr << RED << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << DEFAULT;
 	return (ostr);
 }
 
@@ -79,12 +79,12 @@ void	Bureaucrat::signForm(const Form &form)
 	try
 	{
 		const_cast<Form &>(form).beSigned(*this);
-		std::cout << this->_name << " signed " << form.getName() << std::endl;
+		std::cout << RED << this->_name << " signed " << form.getName() << DEFAULT << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->_name << " couldn't sign " << form.getName()
-		<< " because " << e.what() << std::endl;
+		std::cerr << RED << this->_name << " couldn't sign " << form.getName()
+		<< " because " << e.what() << DEFAULT << std::endl;
 	}
 	
 }

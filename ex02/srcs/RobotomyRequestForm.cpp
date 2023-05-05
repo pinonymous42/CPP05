@@ -15,13 +15,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << YELLOW << "RobotomyRequestForm's destructor called" << DEFAULT << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &form)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &form):AForm(form)
 {
 	this->_target = form.getTarget();
-	this->setName(form.getName());
-	this->setSigned(form.getSigned());
-	this->setNeededSign(form.getNeededSign());
-	this->setNeededExe(form.getNeededExe());
 	std::cout << YELLOW << "RobotomyRequestForm's copy constructor called" << DEFAULT << std::endl;
 }
 
@@ -30,10 +26,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &f
 	if (this != &form)
 	{
 		this->_target = form.getTarget();
-		this->setName(form.getName());
-		this->setSigned(form.getSigned());
-		this->setNeededSign(form.getNeededSign());
-		this->setNeededExe(form.getNeededExe());
+		AForm::operator=(form);
 	}
 	return (*this);
 }

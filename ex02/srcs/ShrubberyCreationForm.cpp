@@ -15,13 +15,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << MAGENTA << "ShrubberyCreationForm's destructor called" << DEFAULT << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form):AForm(form)
 {
 	this->_target = form.getTarget();
-	this->setName(form.getName());
-	this->setSigned(form.getSigned());
-	this->setNeededSign(form.getNeededSign());
-	this->setNeededExe(form.getNeededExe());
 	std::cout << MAGENTA << "ShrubberyCreationForm's copy constructor called" << DEFAULT << std::endl;
 }
 
@@ -30,10 +26,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	if (this != &form)
 	{
 		this->_target = form.getTarget();
-		this->setName(form.getName());
-		this->setSigned(form.getSigned());
-		this->setNeededSign(form.getNeededSign());
-		this->setNeededExe(form.getNeededExe());
+		AForm::operator=(form);
 	}
 	return (*this);
 }
