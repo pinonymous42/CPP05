@@ -6,7 +6,7 @@ int	main(void)
 	try
 	{
 		std::string form_name = "form no ";
-		Bureaucrat bureaucrat("Kohei", 2);
+		Bureaucrat bureaucrat("Kohei", 4);
 		// for (int i = 5; i >= 0; --i)
 		for (int i = 5; i >= 1; --i)
 		{
